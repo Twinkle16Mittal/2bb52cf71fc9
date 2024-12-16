@@ -7,7 +7,8 @@ on:
 
 env:
   BASE_URL: "https://example.com"
-  FULL_URL: "${{ env.BASE_URL }}/api/v1"
+  FULL_URL: ${{ env.BASE_URL + '/api/v1' }}
+
 
 jobs:
   example-job:
