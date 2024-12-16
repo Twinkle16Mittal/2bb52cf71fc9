@@ -16,7 +16,7 @@ jobs:
 
       - name: Set New Variable Based on Existing Variable
         env:
-          MY_SUB_VARIABLE: ${{ env.MY_VARIABLE + '_suffix' }}
+          MY_SUB_VARIABLE: ${{ env.MY_VARIABLE}}
         run: echo "MY_SUB_VARIABLE=${{ env.MY_SUB_VARIABLE }}"
 
 
