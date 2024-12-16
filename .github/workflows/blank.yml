@@ -5,10 +5,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      BASE_URL: "https://example.com"
+    environment:
+      MY_VARIABLE: 'value'
+    
     steps:
-      - name: Set environment variable based on BASE_URL
-        run: echo "Setting DEPLOY_URL to ${{ env.BASE_URL }}/deploy"
+      - name: Set Variable
         env:
-          DEPLOY_URL: ${{ env.BASE_URL }}/deploy
+          MY_SUB_VARIABLE: ${{ env.MY_VARIABLE + '_suffix' }}  # This will not work
+
+      - name: Output Variable
+        run: echo "MY_SUB_VARIABLE=${{ env.MY_SUB_VARIABLE }}"
+
